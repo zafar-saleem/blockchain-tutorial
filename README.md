@@ -1,4 +1,4 @@
-# Blockchain dApp for my blog post on Medium.
+# Blockchain dApp for my blog post.
 
 Note: This is a sample project for my blog on medium which can be found [here]().
 
