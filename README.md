@@ -1,6 +1,6 @@
 # Blockchain dApp for my blog post.
 
-Note: This is a sample project for my blog on medium which can be found [here]().
+Note: This is a sample project for my blog on medium which can be found [here](https://betterprogramming.pub/blockchain-introduction-using-real-world-dapp-react-solidity-web3-js-546471419955).
 
 ## Get Started
 1. Clone this repository
