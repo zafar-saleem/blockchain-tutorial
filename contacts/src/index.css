@@ -1,10 +1,23 @@
 body {
+  background-image: url("./scae_background3.png");                                             /*aggiunto questa riga*/
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#container2 {                                                                                /*aggiunto questa riga*/
+  padding-top: 15px; padding-right: 0px; padding-bottom: 15px; padding-left: 0px;       /*aggiunto questa riga*/
+}                                                                                       /*aggiunto questa riga*/
+
+#card {
+  width: 18rem;
+}
+
+#image {
+  max-width: 30%;
 }
 
 code {

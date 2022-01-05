@@ -12,6 +12,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Web3 from 'web3';
 import { CONTRACT_ABI, CONTRACT_ADDRESS } from './config';
 
+import scae_logo_image from './scae_logo.jpg'; // Tell webpack this JS file uses this image
+import scae_token_image from './scae_token.png'; // Tell webpack this JS file uses this image
+
 function App() {
 	const [account, setAccountState] = useState();
 	const [myContract, setmyContractState] = useState();
@@ -60,45 +63,71 @@ function App() {
 	return (
 		<div>
 			<Navbar bg="dark" variant="dark">
-					<Container>
-						<Navbar.Brand href="#home">
-							<img
-								alt=""
-								src="/logo.svg"
-								width="30"
-								height="30"
-								className="d-inline-block align-top"
-							/>{' '}
-							React Bootstrap
-						</Navbar.Brand>
-					</Container>
-				</Navbar>
-				
-			<Container>
+				<Container>
+					<Navbar.Brand href="#home">
+						<img
+							alt=""
+							src={scae_logo_image}
+							width="30"
+							height="30"
+							className="d-inline-block align-top"
+						/>{' '}
+						Smart and Connected Agrifood Ecosystem
+					</Navbar.Brand>
+				</Container>
+			</Navbar>
+
+			<Container id="container2">
 				<Row>
-					<Col><Button variant="primary">Primary</Button>{' '}</Col>
-					<Col><Card>
-						<Card.Img variant="top" src="older.js/100px160" />
-						<Card.Body>
-							<Card.Title>Card title</Card.Title>
-							<Card.Text>
-								This is a wider card with supporting text below as a natural lead-in to
-								additional content. This content is a little bit longer.
-							</Card.Text>
-						</Card.Body>
-						<Card.Footer>
-							<small className="text-muted">Last updated 3 mins ago</small>
-						</Card.Footer>
-					</Card></Col>
-				</Row>
-				<Row>
-					<Col><p>Your account is: {account}</p></Col>
-					<Col><p>Your balance is: {balanceToken}</p></Col>
-					<Col>3 of 3</Col>
+					<Col>
+						<Card id="card" class="card text-center bg-light">
+							<Card.Img id="image" variant="top" src={scae_token_image} class="card-img-top rounded mx-auto d-block" />
+							<Card.Body>
+								<Card.Title>SCAE TOKEN</Card.Title>
+								<Card.Text>
+									{balanceToken}
+								</Card.Text>
+								<Button variant="primary">Go somewhere</Button>
+							</Card.Body>
+							<Card.Footer>
+								<small className="text-muted">{account}</small>
+							</Card.Footer>
+						</Card>
+					</Col>
+					<Col>
+						<Card id="card" class="card text-center bg-light">
+							<Card.Img id="image" variant="top" src={scae_token_image} class="card-img-top rounded mx-auto d-block" />
+							<Card.Body>
+								<Card.Title>SCAE TOKEN</Card.Title>
+								<Card.Text>
+									{balanceToken}
+								</Card.Text>
+								<Button variant="primary">Go somewhere</Button>
+							</Card.Body>
+							<Card.Footer>
+								<small className="text-muted">{account}</small>
+							</Card.Footer>
+						</Card>
+					</Col>
+					<Col>
+						<Card id="card" class="card text-center bg-light">
+							<Card.Img id="image" variant="top" src={scae_token_image} class="card-img-top rounded mx-auto d-block" />
+							<Card.Body>
+								<Card.Title>SCAE TOKEN</Card.Title>
+								<Card.Text>
+									{balanceToken}
+								</Card.Text>
+								<Button variant="primary">Go somewhere</Button>
+							</Card.Body>
+							<Card.Footer>
+								<small className="text-muted">{account}</small>
+							</Card.Footer>
+						</Card>
+					</Col>
 				</Row>
 			</Container>
 		</div>
-				
+
 	);
 }
 
