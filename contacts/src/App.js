@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -19,7 +20,7 @@ function App() {
 	const [account, setAccountState] = useState();
 	const [myContract, setmyContractState] = useState();
 	const [balanceToken, setBalanceTokenState] = useState();
-	//const [contacts, setContacts] = useState([]);
+	const [contacts, setContacts] = useState([]);
 
 	useEffect(() => {
 		async function load() {
@@ -46,6 +47,13 @@ function App() {
 				setBalanceTokenState(balanceTokenResponseConverted);
 			});
 
+			for (var i = 1; i <= 5; i++) {
+				//code before sleep goes here, just change the time below in milliseconds
+				await sleep(3000)
+				setContacts((contacts) => [...contacts, { id: i + "id", name: i + "name", phone: i + "phone" }]);
+
+			}
+
 			/*
 			const counter = await myContract.methods.count().call();
 
@@ -55,6 +63,7 @@ function App() {
 			}
 			*/
 
+
 		}
 
 		load();
@@ -62,9 +71,9 @@ function App() {
 
 	return (
 		<div>
-			<Navbar bg="dark" variant="dark">
+			<Navbar id="navbar">
 				<Container>
-					<Navbar.Brand href="#home">
+					<Navbar.Brand className="text-center">
 						<img
 							alt=""
 							src={scae_logo_image}
@@ -80,47 +89,36 @@ function App() {
 			<Container id="container2">
 				<Row>
 					<Col>
-						<Card id="card" class="card text-center bg-light">
-							<Card.Img id="image" variant="top" src={scae_token_image} class="card-img-top rounded mx-auto d-block" />
-							<Card.Body>
-								<Card.Title>SCAE TOKEN</Card.Title>
-								<Card.Text>
-									{balanceToken}
-								</Card.Text>
-								<Button variant="primary">Go somewhere</Button>
-							</Card.Body>
-							<Card.Footer>
-								<small className="text-muted">{account}</small>
-							</Card.Footer>
-						</Card>
+						<ListGroup id="list" className="text-center">
+							<ListGroup.Item id="listgroupitemtitle"><b>Merkle Roots Intermedie</b></ListGroup.Item>
+							{
+								Object.keys(contacts).map((contact, index) => (
+									<ListGroup.Item key={`${contacts[index].name}-${index}`}>
+										<b>Name:</b>{contacts[index].name}
+										<br></br>
+										<b>Phone:</b>{contacts[index].phone}
+									</ListGroup.Item>
+								))
+							}
+						</ListGroup>
 					</Col>
 					<Col>
-						<Card id="card" class="card text-center bg-light">
-							<Card.Img id="image" variant="top" src={scae_token_image} class="card-img-top rounded mx-auto d-block" />
-							<Card.Body>
-								<Card.Title>SCAE TOKEN</Card.Title>
-								<Card.Text>
-									{balanceToken}
-								</Card.Text>
-								<Button variant="primary">Go somewhere</Button>
-							</Card.Body>
-							<Card.Footer>
-								<small className="text-muted">{account}</small>
-							</Card.Footer>
-						</Card>
 					</Col>
 					<Col>
-						<Card id="card" class="card text-center bg-light">
-							<Card.Img id="image" variant="top" src={scae_token_image} class="card-img-top rounded mx-auto d-block" />
+					</Col>
+					<Col>
+						<Card id="card" className="text-center">
+							<Card.Header id="cardheader">CardHeader</Card.Header>
+							<Card.Img id="image" variant="top" src={scae_token_image} className="card-img-top rounded mx-auto d-block" />
 							<Card.Body>
 								<Card.Title>SCAE TOKEN</Card.Title>
 								<Card.Text>
 									{balanceToken}
 								</Card.Text>
-								<Button variant="primary">Go somewhere</Button>
+								<Button id="cardbutton" variant="primary">Aggiorna</Button>
 							</Card.Body>
-							<Card.Footer>
-								<small className="text-muted">{account}</small>
+							<Card.Footer id="cardfooter">
+								CardFooter
 							</Card.Footer>
 						</Card>
 					</Col>
@@ -129,6 +127,11 @@ function App() {
 		</div>
 
 	);
+}
+
+//you can leave the sleep constant
+async function sleep(milliseconds) {
+	return new Promise(resolve => setTimeout(resolve, milliseconds))
 }
 
 export default App;
