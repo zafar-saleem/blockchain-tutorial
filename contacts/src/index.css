@@ -1,5 +1,5 @@
 body {
-  /*background-image: url("./scae_background3.png");                                             /*aggiunto questa riga*/
+  background-image: url("./scae_background4.png");                                             /*aggiunto questa riga*/
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -8,33 +8,28 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#container2 {                                                                                /*aggiunto questa riga*/
-  padding-top: 15px; padding-right: 0px; padding-bottom: 15px; padding-left: 0px;       /*aggiunto questa riga*/
-}                                                                                       /*aggiunto questa riga*/
 
-#navbar {
-  background-color: rgba(147, 17, 53, 0.93);
+
+/*GENERALI*/
+
+#image {
+  max-width: 25%;
+  margin-top: 10px;
 }
 
-#list {
-  /* width: 10 rem; */
-  width: 175%;
-}
-
-#listgroupitemtitle {
-  background-color: rgba(147, 17, 53, 0.93);
-}
-
-
-#card {
-  /* width: 10 rem; */
-  width: 75%;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
 #cardheader {
   /* width: 10 rem; */
   background-color: rgba(147, 17, 53, 0.93);
   color: white;
+}
+
+#cardtitle {
+  color: #6d6d6d;
 }
 
 #cardfooter {
@@ -45,18 +40,39 @@ body {
 
 #cardbutton {
   color: #fff;
-  background-color: #8c8c8c;
-  border-color: #bbd7ff;
+  background-color: #535353;
+  border-color: #535353;
   font-size: 0.8rem;
 }
 
-#image {
-  max-width: 20%;
-  margin-top: 10px;
-  
+
+
+/* SPECIFICI */
+
+.row {                                                                                /*aggiunto questa riga*/
+  padding-top: 15px; padding-right: 0px; padding-bottom: 15px; padding-left: 0px;       /*aggiunto questa riga*/
+}                                                                                       /*aggiunto questa riga*/
+
+#navbar {
+  background-color: rgba(147, 17, 53, 0.93);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#cardRegistrazione {
+  /* width: 10 rem; */
+  width: 80%;
+}
+
+#cardToken {
+  /* width: 10 rem; */
+  width: 75%;
+}
+
+#list {
+  /* width: 10 rem; */
+  width: 100%;
+}
+
+#listgroupitemtitle {
+  background-color: rgba(147, 17, 53, 0.93);
+  color: #fff;
 }

@@ -1,4 +1,4 @@
-export const CONTRACT_ADDRESS = '0xb685B6f623c7F7b0E3295fFB4e98d33E0fDaF267'
+export const CONTRACT_ADDRESS = '0x99CF438615bBb1AE64FAbdDAE60dCF7E87e456b4'
 
 export const CONTRACT_ABI = [
   {
@@ -349,7 +349,7 @@ export const CONTRACT_ABI = [
         "type": "address"
       }
     ],
-    "name": "registerAddress",
+    "name": "_registerAddress",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -362,7 +362,7 @@ export const CONTRACT_ABI = [
         "type": "address"
       }
     ],
-    "name": "deregisterAddress",
+    "name": "_deregisterAddress",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -375,7 +375,7 @@ export const CONTRACT_ABI = [
         "type": "address"
       }
     ],
-    "name": "verifyRegistration",
+    "name": "_verifyRegistration",
     "outputs": [
       {
         "internalType": "bool",
