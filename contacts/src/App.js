@@ -26,7 +26,7 @@ function App() {
 	const [balanceToken, setBalanceTokenState] = useState(0);
 	const [verifiedFinalMerkleRoot, setVerifiedFinalMerkleRoot] = useState("?");
 	const [intermediateMerkleRootsVineyardList, setIntermediateMerkleRootsVineyardList] = useState([]);
-	const [finalMerkleRootVineyard, setFinalMerkleRootVineyard] = useState(0);
+	const [finalMerkleRootVineyard, setFinalMerkleRootVineyard] = useState();
 	const [intermediateMerkleRootsCellarList, setIntermediateMerkleRootsCellarList] = useState([]);
 	const [finalMerkleRootCellar, setFinalMerkleRootCellar] = useState(0);
 
@@ -43,15 +43,6 @@ function App() {
 			const myContractInstance = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
 			setmyContractState(myContractInstance);
 
-			const verifyRegistrationResponse = await myContractInstance.methods._verifyRegistration(accounts[0]).call();
-			setRegistrationStatus(verifyRegistrationResponse);
-
-			const balanceOfResponse = await myContractInstance.methods.balanceOf(accounts[0]).call();
-			const balanceOfResponseConverted = web3.utils.fromWei(balanceOfResponse);
-			setBalanceTokenState(balanceOfResponseConverted);
-
-
-
 			/* FUNZIONA, AGGIUNGERE ELEMENTI A LISTA
 			const counter = await myContract.methods.count().call();
 			for (var i = 1; i <= counter; i++) {
@@ -61,7 +52,7 @@ function App() {
 			*/
 
 
-
+			/*
 			//riassegniamo alla variabile account, il nuovo account selezionato in metamask dall'utente ed aggiorniamo tutti i componenti
 			window.ethereum.on('accountsChanged', async function (accounts) {
 				setAccountState(accounts[0]);
@@ -81,6 +72,8 @@ function App() {
 				const getFinalMerkleRootVineyardResponse = await myContractInstance.methods._getFinalMerkleRoot(accounts[0], "vineyard").call();
 				setFinalMerkleRootVineyard(getFinalMerkleRootVineyardResponse);
 			});
+			*/
+			
 
 
 			while (true) {
@@ -92,13 +85,15 @@ function App() {
 				const balanceOfResponseConverted = web3.utils.fromWei(balanceOfResponse);
 				setBalanceTokenState(balanceOfResponseConverted);
 
-				const getIntermediateMerkleRootsVineayrdResponse = await myContractInstance.methods._getIntermediateMerkleRoots(accounts[0], "vineyard").call();
+				const getIntermediateMerkleRootsVineayrdResponse = await myContractInstance.methods._getIntermediateMerkleRoots("vineyard").call();
 				for (var i = 0; i < getIntermediateMerkleRootsVineayrdResponse.length; i++) {
 					setIntermediateMerkleRootsVineyardList(getIntermediateMerkleRootsVineayrdResponse);
 				}
 
 				const getFinalMerkleRootVineyardResponse = await myContractInstance.methods._getFinalMerkleRoot(accounts[0], "vineyard").call();
-				setFinalMerkleRootVineyard(getFinalMerkleRootVineyardResponse);
+				if(getFinalMerkleRootVineyardResponse!="0x0000000000000000000000000000000000000000000000000000000000000000"){
+					setFinalMerkleRootVineyard(getFinalMerkleRootVineyardResponse);
+				}
 			}
 
 		}

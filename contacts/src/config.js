@@ -1,4 +1,4 @@
-export const CONTRACT_ADDRESS = '0x99CF438615bBb1AE64FAbdDAE60dCF7E87e456b4'
+export const CONTRACT_ADDRESS = '0xD6381275957A4d80Eb14B513187f17d48642eBe9'
 
 export const CONTRACT_ABI = [
   {
@@ -428,11 +428,6 @@ export const CONTRACT_ABI = [
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "_address",
-        "type": "address"
-      },
-      {
         "internalType": "string",
         "name": "_selector",
         "type": "string"
@@ -453,17 +448,25 @@ export const CONTRACT_ABI = [
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "_address",
-        "type": "address"
-      },
-      {
         "internalType": "string",
         "name": "_selector",
         "type": "string"
       }
     ],
     "name": "_publishFinalMerkleRoot",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_address",
+        "type": "address"
+      }
+    ],
+    "name": "remunerateUser",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
