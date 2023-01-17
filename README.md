@@ -8,3 +8,5 @@ Note: This is a sample project for my blog on medium which can be found [here](h
 3. Run `yarn install`.
 3. Run `yarn start`.
 4. Go to http://localhost:3000 in your browser to see it in action.
+
+Please click here to buy me a coffee <a href="https://www.buymeacoffee.com/zafarsaleem" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
